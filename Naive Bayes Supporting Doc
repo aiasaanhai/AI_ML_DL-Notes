@@ -79,6 +79,24 @@ In this context, the Gaussian Naive Bayes classifier will learn from the `X_trai
 
 ======================================================================================================================================================
 
+Naive Bayes classifiers are a family of simple yet effective classification algorithms based on Bayes' Theorem with the assumption of independence among features. Despite their simplicity, they often perform well in various real-world scenarios, especially in text classification and spam filtering. There are several types of Naive Bayes classifiers, each suited for different types of data:
+
+1. **Gaussian Naive Bayes**:
+   - This variant assumes that the features follow a Gaussian (normal) distribution. It's particularly useful when dealing with continuous data. The Gaussian Naive Bayes classifier calculates the mean and variance of each feature in the training set and uses these parameters to perform the classification.
+
+2. **Multinomial Naive Bayes**:
+   - The Multinomial Naive Bayes classifier is used primarily with discrete data and is especially popular for text classification problems where features are typically represented as word vector counts (though it can also be used for other types of count data). It's based on the frequency of the words present in the documents, assuming that features (word counts) follow a multinomial distribution.
+
+3. **Bernoulli Naive Bayes**:
+   - This classifier is useful when dealing with binary/boolean features. It's particularly well-suited for text classification problems with 'bag of words' models where the features are binary (word occurs in the document or not). The Bernoulli Naive Bayes model calculates the probability of each feature being present or absent.
+
+4. **Complement Naive Bayes (CNB)**:
+   - Complement Naive Bayes is an adaptation of the standard Multinomial Naive Bayes algorithm that is particularly suited for imbalanced data sets. Instead of calculating the probability of each class given the features, it calculates the probability of each class being absent. It's been found to work better than the standard Multinomial Naive Bayes on datasets with imbalanced class distributions.
+
+Each of these variants has its specific use cases and assumptions about the underlying data distribution. The choice of which Naive Bayes classifier to use largely depends on the nature of your data and the specific problem you are trying to solve.
+
+
+=======================================================================================================================================================
 y_pred = classifier.predict(X_test)
 
 
